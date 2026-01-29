@@ -1,0 +1,115 @@
+.timelineSection {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.line {
+    position: absolute;
+    left: 11px;
+    /* Center of the dot which is 24px wide? No, dot is 16px. 11px is good guess */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--cyan-glow), var(--violet-glow), transparent);
+}
+
+.item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.dot {
+    position: absolute;
+    left: -29px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    background: var(--background);
+    border: 2px solid var(--violet-glow);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--violet-glow);
+    z-index: 2;
+}
+
+.content {
+    padding: 2rem;
+    border-radius: 16px;
+    /* glass-card utility handles bg/border */
+}
+
+.period {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--cyan-glow);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.role {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.company {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--violet-glow);
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1rem;
+    }
+
+    .line {
+        left: 4px;
+    }
+
+    .dot {
+        left: -24px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .item {
+        padding-left: 1rem;
+    }
+}
