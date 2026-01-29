@@ -32,6 +32,11 @@ body {
 }
 
 /* Utilities */
+section {
+  scroll-margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);

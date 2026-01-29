@@ -2,69 +2,48 @@ import styles from './Timeline.module.css';
 
 const experiences = [
     {
-        role: "Data Science Engineer",
+        role: "AI Engineer",
+        company: "Rocketfrog.AI",
+        period: "January 2026 - Present",
+        details: "Full-time role building next-gen AI systems and scalable architectures."
+    },
+    {
+        role: "AI Engineer Intern",
         company: "V4C.AI",
-        location: "Pune",
-        period: "July 2025 – Present",
-        details: [
-            "Automated 75% of invoice verification workflow, reducing manual effort significantly.",
-            "Built Vision AI document extraction pipeline and ETL workflow with Databricks.",
-            "Developed POC using MCP server with Databricks Genie Spaces."
-        ]
+        period: "July 2025 - December 2025",
+        details: "Built RAG pipelines and optimized LLM inference for enterprise clients using FastMCP and LangGraph."
     },
     {
-        role: "Agentic AI Intern",
-        company: "RocketFrogAI",
-        location: "Delhi",
-        period: "Feb 2025 – June 2025",
-        details: [
-            "Built Agentic AI lead research system with Scrapy and LangGraph.",
-            "Developed deep research agent to identify potential partners and clients."
-        ]
-    },
-    {
-        role: "Project Intern",
+        role: "AI/ML Intern",
         company: "IBM",
-        location: "Dehradun",
-        period: "June 2024 – Aug 2024",
-        details: [
-            "Built POC of RNN model for freestyle rap generation using TensorFlow.",
-            "Used NLTK for text-preprocessing to improve lyrical coherence."
-        ]
+        period: "June 2024 - July 2024",
+        details: "Developed emotion detection models using NLP and deep learning techniques."
     },
     {
-        role: "UGC Marketing (Self-Employed)",
-        company: "Freelance",
-        location: "Dehradun",
-        period: "Jan 2022 – Dec 2023",
-        details: [
-            "Managed influencer collaborations, growing social media presence by 70k+.",
-            "Improved engagement and conversion rates by up to 60% for D2C brands."
-        ]
+        role: "Freelance",
+        company: "UGC Marketing",
+        period: "August 2023 - Present",
+        details: "Managed digital marketing campaigns and content strategy for various clients."
     }
 ];
 
 export default function Timeline() {
     return (
         <section className={styles.timelineSection}>
-            <h2 className={styles.heading}>WORK <span className="text-gradient">EXPERIENCE</span></h2>
+            <h2 className={styles.heading}>Work <span className="text-gradient">Experience</span></h2>
             <div className={styles.timeline}>
-                <div className={styles.line}></div>
                 {experiences.map((exp, index) => (
-                    <div key={index} className={styles.item}>
+                    <div key={index} className={`${styles.timelineItem} glass-card`}>
                         <div className={styles.dot}></div>
-                        <div className={`${styles.content} glass-card`}>
-                            <span className={styles.period}>{exp.period}</span>
+                        <div className={styles.content}>
                             <h3 className={styles.role}>{exp.role}</h3>
-                            <h4 className={styles.company}>{exp.company} | {exp.location}</h4>
-                            <ul className={styles.list}>
-                                {exp.details.map((detail, i) => (
-                                    <li key={i}>{detail}</li>
-                                ))}
-                            </ul>
+                            <span className={styles.company}>{exp.company}</span>
+                            <span className={styles.period}>{exp.period}</span>
+                            <p className={styles.details}>{exp.details}</p>
                         </div>
                     </div>
                 ))}
+                <div className={styles.line}></div>
             </div>
         </section>
     );
